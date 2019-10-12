@@ -11,6 +11,7 @@ cat install.sh | bash
 - vscode
 - heroku cli
 - git
+- fzf
 - fish
 - fisher
 - fish plugins
@@ -18,3 +19,4 @@ cat install.sh | bash
 - rbenv
 - ruby
 - terminal profile
+

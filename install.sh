@@ -4,6 +4,8 @@ sudo snap install --classic code
 sudo apt-add-repository ppa:fish-shell/release-3 -y
 sudo apt-get update -y
 sudo apt-get install libjemalloc-dev git fish -y
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 echo -e "\e[32mbinaries installed\e[0m"
 
 echo -e "\e[93minstalling terminal profile\e[0m"
