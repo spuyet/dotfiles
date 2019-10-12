@@ -7,8 +7,8 @@ sudo apt-get install libjemalloc-dev git fish -y
 echo -e "\e[32mbinaries installed\e[0m"
 
 echo -e "\e[93minstalling terminal profile\e[0m"
-dconf load /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ < misc/material-theme-profile.dconf
-echo -e "\e[terminal profile installed\e[0m"
+dconf load /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ < misc/terminal-profile.dconf
+echo -e "\e[32mterminal profile installed\e[0m"
 
 echo -e "\e[93mconfiguring fish shell\e[0m"
 cp misc/config.fish ~/.config/fish/config.fish
