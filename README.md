@@ -17,3 +17,4 @@ cat install.sh | bash
 - starship prompt
 - rbenv
 - ruby
+- terminal profile
