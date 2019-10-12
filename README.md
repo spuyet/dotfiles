@@ -15,3 +15,5 @@ cat install.sh | bash
 - fisher
 - fish plugins
 - starship prompt
+- rbenv
+- ruby
