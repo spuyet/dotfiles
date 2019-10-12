@@ -23,7 +23,8 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 echo -e "\e[32mfisher package manager installed\e[0m"
 
 echo -e "\e[93minstalling fisher plugins\e[0m"
-echo 'fisher add jorgebucaran/fish-spark jethrokuan/z matchai/spacefish jethrokuan/fzf joseluisq/gitnow laughedelic/pisces fishpkg/fish-git-util' | fish
+cp misc/fishfile ~/.config/fish/fishfile
+echo 'fisher' | fish
 echo -e "\e[32mfisher plugins installed\e[0m"
 
 echo -e "\e[32minstallation finished, please run: 'chsh -s /usr/bin/fish $USER' to set fish shell as your default shell on next login\e[0m"
