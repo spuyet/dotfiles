@@ -1,15 +1,28 @@
 echo -e "\e[93minstalling binaries\e[0m"
 sudo snap install --classic heroku
 sudo snap install --classic code
-sudo apt-get install git -y
-echo -e "\e[32mbinaries installed\e[0m"
-
-echo -e "\e[93minstalling fish shell\e[0m"
 sudo apt-add-repository ppa:fish-shell/release-3 -y
 sudo apt-get update -y
-sudo apt-get install fish -y
+sudo apt-get install libjemalloc-dev git fish -y
+echo -e "\e[32mbinaries installed\e[0m"
+
+echo -e "\e[93mconfiguring fish shell\e[0m"
 cp misc/config.fish ~/.config/fish/config.fish
-echo -e "\e[32mfish shell installed\e[0m"
+echo -e "\e[32mfish shell configured\e[0m"
+
+echo -e "\e[93minstalling rbenv\e[0m"
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+cd ~/.rbenv && src/configure && make -C src && cd -
+~/.rbenv/bin/rbenv init
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+echo -e "\e[32mrbenv installed\e[0m"
+
+echo -e "\e[93minstalling ruby\e[0m"
+RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.5.3
+echo -e "\e[32mruby installed\e[0m"
+
 
 echo -e "\e[93minstalling starship prompt\e[0m"
 mkdir -p ~/.bin
