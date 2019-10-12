@@ -1,0 +1,11 @@
+[time]
+disabled = false
+
+[ruby]
+style = "bold cyan"
+
+[package]
+disabled = true
+
+[directory]
+style	= "bold blue"
