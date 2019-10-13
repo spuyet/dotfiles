@@ -1,0 +1,26 @@
+{
+    "workbench.colorTheme": "Monokai Pro",
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": true,
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.lint":{
+        "rubocop": {
+            "lint": true,
+            "rails": true
+        },
+        "ruby": true,
+        "fasterer": true,
+        "debride": true,
+        // "ruby-lint": true,
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "editor.trimAutoWhitespace": true,
+    "editor.renderWhitespace": "all",
+    "ruby.intellisense": "rubyLocate",
+    "editor.tabSize": 2,
+    "git.autofetch": true
+}

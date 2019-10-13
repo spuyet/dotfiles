@@ -1,49 +1,47 @@
-echo -e "\e[93minstalling binaries\e[0m"
-sudo snap install --classic heroku
-sudo snap install --classic code
-sudo apt-add-repository ppa:fish-shell/release-3 -y
-sudo apt-get update -y
-sudo apt-get install libjemalloc-dev git fish -y
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-echo -e "\e[32mbinaries installed\e[0m"
+#!/bin/bash
 
-echo -e "\e[93minstalling terminal profile\e[0m"
+source functions.sh
+
+SCRIPT_PATH=$(current_path)
+
+log_info "Installing starship prompt"
+mkdir -p $HOME/.bin
+ln -f -s $SCRIPT_PATH/config/starship/starship.toml $HOME/.config/starship.toml
+ln -f -s $SCRIPT_PATH/bin/starship $HOME/.bin/starship
+log_success "Starship prompt installed"
+
+log_info "Installing linux packages"
+cat install_linux_packages.sh | bash
+log_success "Linux packages installed"
+
+log_info "Installing vscode extensions"
+cat install_vscode_extensions.sh | bash
+log_success "VScode extension installed"
+
+log_info "Installing terminal profile"
 dconf load /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ < misc/terminal-profile.dconf
-echo -e "\e[32mterminal profile installed\e[0m"
+log_success "Terminal profile installed"
 
-echo -e "\e[93mconfiguring fish shell\e[0m"
-cp misc/config.fish ~/.config/fish/config.fish
-echo -e "\e[32mfish shell configured\e[0m"
+log_info "Configuring fish shell"
+ln -f -s $SCRIPT_PATH/config/fish/config.fish $HOME/.config/fish/config.fish
+log_success "Fish shell configured"
 
-echo -e "\e[93minstalling rbenv\e[0m"
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-cd ~/.rbenv && src/configure && make -C src && cd -
-~/.rbenv/bin/rbenv init
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
-echo -e "\e[32mrbenv installed\e[0m"
+log_info "installing rbenv"
+cat install_rbenv.sh | bash
+log_success "Rbenv installed"
 
-echo -e "\e[93minstalling ruby\e[0m"
+log_info "Installing ruby"
 RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.5.3
-echo -e "\e[32mruby installed\e[0m"
+log_success "Ruby installed"
 
-echo -e "\e[93minstalling starship prompt\e[0m"
-mkdir -p ~/.bin
-tar -zxvf misc/starship-x86_64-unknown-linux-gnu.tar.gz
-mv starship ~/.bin
-cp misc/starship.toml ~/.config/starship.toml
-echo -e "\e[32mstarship prompt installed\e[0m"
+log_info "Installing fisher package manager"
+curl https://git.io/fisher --create-dirs -sLo $HOME/.config/fish/functions/fisher.fish
+log_success "Fisher package manager installed"
 
-echo -e "\e[93minstalling fisher package manager\e[0m"
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-echo -e "\e[32mfisher package manager installed\e[0m"
-
-echo -e "\e[93minstalling fisher plugins\e[0m"
-cp misc/fishfile ~/.config/fish/fishfile
+log_info "Installing fisher plugins"
+ln -f -s $SCRIPT_PATH/config/fish/fishfile $HOME/.config/fish/fishfile
 echo 'fisher' | fish
-echo -e "\e[32mfisher plugins installed\e[0m"
+log_success "Fisher plugins installed"
 
-echo -e "\e[32minstallation finished, please run: 'chsh -s /usr/bin/fish $USER' to set fish shell as your default shell on next login\e[0m"
-echo -e "\e[32mIf you want to try it now, run: 'fish' :)\e[0m"
+log_success "Installation finished, please run: 'chsh -s /usr/bin/fish $USER' to set fish shell as your default shell on next login"
+log_success "If you want to try it now, run: 'fish' :)"
