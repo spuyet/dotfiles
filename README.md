@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-cat install.sh | bash
+curl -L https://raw.github.com/spuyet/dotfiles/master/remote_install.sh | sh
 ```
 
 ## Content
@@ -19,4 +19,3 @@ cat install.sh | bash
 - rbenv
 - ruby
 - terminal profile
-

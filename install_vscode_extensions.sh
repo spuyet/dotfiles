@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-pkglist=(
+pkglist="
   bungcip.better-toml
   faustinoaq.crystal-lang
   ms-azuretools.vscode-docker
@@ -16,8 +16,10 @@ pkglist=(
   dbaeumer.jshint
   dbaeumer.vscode-eslint
   msjsdiag.debugger-for-chrome
-)
+"
 
-for i in ${pkglist[@]}; do
-  code --install-extension $i
+set -- $pkglist
+
+for i in "$@"; do
+  code --install-extension "$i"
 done

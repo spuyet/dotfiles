@@ -1,8 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
-SCRIPT_PATH=$(current_path)
+log_info () {
+  echo "\e[93m$1\e[0m"
+}
 
-. functions.sh
+log_success () {
+  echo "\e[32m$1\e[0m"
+}
+
+SCRIPT_PATH=$( cd "$(dirname "$0")" ; pwd -P )
 
 log_info "Installing starship prompt"
 mkdir -p $HOME/.bin
