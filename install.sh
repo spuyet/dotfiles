@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source functions.sh
-
 SCRIPT_PATH=$(current_path)
+
+. functions.sh
 
 log_info "Installing starship prompt"
 mkdir -p $HOME/.bin
@@ -11,11 +11,11 @@ ln -f -s $SCRIPT_PATH/bin/starship $HOME/.bin/starship
 log_success "Starship prompt installed"
 
 log_info "Installing linux packages"
-bash install_linux_packages.sh
+sh install_linux_packages.sh
 log_success "Linux packages installed"
 
 log_info "Installing vscode extensions"
-bash install_vscode_extensions.sh
+sh install_vscode_extensions.sh
 log_success "VScode extension installed"
 
 log_info "Installing terminal profile"
@@ -27,7 +27,7 @@ ln -f -s $SCRIPT_PATH/config/fish/config.fish $HOME/.config/fish/config.fish
 log_success "Fish shell configured"
 
 log_info "installing rbenv"
-bash install_rbenv.sh
+sh install_rbenv.sh
 log_success "Rbenv installed"
 
 log_info "Installing ruby"
