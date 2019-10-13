@@ -11,11 +11,11 @@ ln -f -s $SCRIPT_PATH/bin/starship $HOME/.bin/starship
 log_success "Starship prompt installed"
 
 log_info "Installing linux packages"
-cat install_linux_packages.sh | bash
+bash install_linux_packages.sh
 log_success "Linux packages installed"
 
 log_info "Installing vscode extensions"
-cat install_vscode_extensions.sh | bash
+bash install_vscode_extensions.sh
 log_success "VScode extension installed"
 
 log_info "Installing terminal profile"
@@ -27,7 +27,7 @@ ln -f -s $SCRIPT_PATH/config/fish/config.fish $HOME/.config/fish/config.fish
 log_success "Fish shell configured"
 
 log_info "installing rbenv"
-cat install_rbenv.sh | bash
+bash install_rbenv.sh
 log_success "Rbenv installed"
 
 log_info "Installing ruby"
