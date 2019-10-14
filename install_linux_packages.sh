@@ -11,7 +11,7 @@ done
 sudo apt-add-repository ppa:fish-shell/release-3 -y
 sudo apt-get update -y
 
-pkglist="libjemalloc-dev git fish"
+pkglist="libjemalloc-dev git fish fonts-powerline"
 
 sudo apt-get install -y $pkglist
 
