@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-wget -qO - https://raw.github.com/spuyet/dotfiles/master/remote_install.sh | bash
+wget -qO - https://raw.githubusercontent.com/spuyet/dotfiles/master/remote_install.sh | bash
 ```
 
 ## Content
