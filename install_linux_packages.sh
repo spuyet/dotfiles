@@ -11,7 +11,7 @@ done
 sudo apt-add-repository ppa:fish-shell/release-3 -y
 sudo apt update -y
 
-pkglist="libjemalloc-dev git fish fonts-powerline tmux ike"
+pkglist="libjemalloc-dev git fish fonts-powerline tmux ike curl"
 
 sudo apt install -y $pkglist
 
