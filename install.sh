@@ -16,6 +16,11 @@ ln -f -s $SCRIPT_PATH/config/starship/starship.toml $HOME/.config/starship.toml
 ln -f -s $SCRIPT_PATH/bin/starship $HOME/.bin/starship
 log_success "Starship prompt installed"
 
+log_info "Installing overmind"
+mkdir -p $HOME/.bin
+ln -f -s $SCRIPT_PATH/bin/overmind $HOME/.bin/overmind
+log_success "Overmind installed"
+
 log_info "Installing linux packages"
 sh install_linux_packages.sh
 log_success "Linux packages installed"

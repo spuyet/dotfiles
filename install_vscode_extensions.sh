@@ -7,6 +7,7 @@ pkglist="
   eamodio.gitlens
   gencer.html-slim-scss-css-class-completion
   monokai.theme-monokai-pro-vscode
+  ms-vscode.go
   rebornix.ruby
   rust-lang.rust
   robinbentley.sass-indented
@@ -16,6 +17,9 @@ pkglist="
   dbaeumer.jshint
   dbaeumer.vscode-eslint
   msjsdiag.debugger-for-chrome
+  sianglim.slim
+  wingrunr21.vscode-ruby
+  zxh404.vscode-proto3
 "
 
 set -- $pkglist
