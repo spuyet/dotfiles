@@ -38,11 +38,11 @@ ln -f -s $SCRIPT_PATH/config/fish/config.fish $HOME/.config/fish/config.fish
 log_success "Fish shell configured"
 
 log_info "installing rbenv"
-sh install_rbenv.sh
+./install_rbenv.fish
 log_success "Rbenv installed"
 
 log_info "Installing ruby"
-RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.5.3
+fish -c "env RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.5.3"
 log_success "Ruby installed"
 
 log_info "Installing fisher package manager"
