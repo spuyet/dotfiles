@@ -20,7 +20,6 @@ wget -qO - https://raw.githubusercontent.com/spuyet/dotfiles/master/remote_insta
 - ruby
 - terminal profile
 - tmux
-- ike
 - curl
 - gcc
 - make
