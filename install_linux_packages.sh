@@ -15,7 +15,5 @@ pkglist="libjemalloc-dev git fish fonts-powerline tmux curl gcc make htop libssl
 
 sudo apt install -y $pkglist
 
-sudo iked && ikec
-
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
