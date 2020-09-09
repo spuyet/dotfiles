@@ -42,7 +42,7 @@ log_info "installing rbenv"
 log_success "Rbenv installed"
 
 log_info "Installing ruby"
-fish -c "env RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.5.3"
+fish -c "env RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.5.3; rbenv global 2.5.3"
 log_success "Ruby installed"
 
 log_info "Installing fisher package manager"
