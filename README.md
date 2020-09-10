@@ -27,3 +27,4 @@ wget -qO - https://raw.githubusercontent.com/spuyet/dotfiles/master/remote_insta
 - libssl-dev
 - libreadline-dev
 - zlib1g-dev
+- vim
