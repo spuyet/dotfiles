@@ -30,5 +30,6 @@ end
 set -gx EDITOR code
 
 alias vpn="ikec -r typhon.vpn -u USERNAME -p PASSWORD -a"
+alias cat="batcat"
 
 eval (starship init fish)
