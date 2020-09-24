@@ -29,3 +29,4 @@ wget -qO - https://raw.githubusercontent.com/spuyet/dotfiles/master/remote_insta
 - zlib1g-dev
 - vim
 - cmake
+- bat
