@@ -11,9 +11,11 @@ done
 sudo apt-add-repository ppa:fish-shell/release-3 -y
 sudo apt update -y
 
-pkglist="libjemalloc-dev git fish fonts-powerline tmux curl gcc make htop libssl-dev libreadline-dev zlib1g-dev vim cmake bat"
+pkglist="libjemalloc-dev git fish fonts-powerline tmux curl gcc make htop libssl-dev libreadline-dev zlib1g-dev vim cmake bat pip"
 
 sudo apt install -y $pkglist
+
+pip3 install bpytop --upgrade
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
