@@ -16,7 +16,6 @@ pkglist="
   hookyqr.beautify
   dbaeumer.jshint
   dbaeumer.vscode-eslint
-  msjsdiag.debugger-for-chrome
   sianglim.slim
   wingrunr21.vscode-ruby
   zxh404.vscode-proto3
