@@ -30,3 +30,5 @@ wget -qO - https://raw.githubusercontent.com/spuyet/dotfiles/master/remote_insta
 - vim
 - cmake
 - bat
+- pip
+- bpytop
