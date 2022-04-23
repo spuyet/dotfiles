@@ -25,6 +25,11 @@ log_info "Installing linux packages"
 sh install_linux_packages.sh
 log_success "Linux packages installed"
 
+log_info "Configuring Git info"
+git config --global user.email "sebastien@puyet.fr"
+git config --global user.name "Sébastien Puyet"
+log_success "Git info configured"
+
 log_info "Installing vscode extensions"
 sh install_vscode_extensions.sh
 log_success "VScode extension installed"
@@ -42,7 +47,7 @@ log_info "installing rbenv"
 log_success "Rbenv installed"
 
 log_info "Installing ruby"
-fish -c "env RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 2.5.3; rbenv global 2.5.3"
+fish -c "env RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 3.1.2; rbenv global 3.1.2"
 log_success "Ruby installed"
 
 log_info "Installing fisher package manager"
@@ -51,7 +56,7 @@ log_success "Fisher package manager installed"
 
 log_info "Installing fisher plugins"
 ln -f -s $SCRIPT_PATH/config/fish/fishfile $HOME/.config/fish/fishfile
-echo 'fisher' | fish
+echo "fisher install $(xargs -a $HOME/.config/fish/fishfile)" | fish
 log_success "Fisher plugins installed"
 
 log_success "Installation finished, please run: 'chsh -s /usr/bin/fish $USER' to set fish shell as your default shell on next login"
